@@ -1,4 +1,3 @@
-	
     <ul class="nav navbar-nav">
 		@if (Auth::guest())
 			<li><a href="/">Home</a></li>
@@ -15,14 +14,13 @@
 			</li>
 			
 			<li class="dropdown">
-			<a href="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-tasks" ></span> Produits
+			<a href="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-tasks" ></span> Commandes
 					<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu" >
-				<li><a href="/users/admin/pendinglist"<span class="glyphicon glyphicon-warning-sign"></span> Commande en Attente</a></li>
-				<li><a href="/users/admin/sendlist"><span class="glyphicon glyphicon-send" ></span> Commande expédiée</a></li>
-				<li><a href="/users/admin/factures"><span class="glyphicon glyphicon-list" ></span> Factures</a></li>
-				<li><a href="/users/admin/userglist"><span class="glyphicon glyphicon-log-out" ></span> Utilisateurs</a></li>
+				<li><a href="/users/admin/pendinglist"><span class="glyphicon glyphicon-warning-sign"></span>Commande en Attente</a></li>
+				<li><a href="/users/admin/sendlist"><span class="glyphicon glyphicon-send" ></span>Commande expédiée</a></li>
+				<li><a href="/users/admin/factures"><span class="glyphicon glyphicon-list" ></span>Factures</a></li>
 			</ul>
 			</li>
 			@endif
@@ -55,7 +53,8 @@
 				</a>
 			<ul class="dropdown-menu" >
 				<li><a href="/users/admin/linkedin"><span class="glyphicon glyphicon-plus" ></span> Ajouter/ Retirer un produit</a></li>
-				<li><a href="/users/admin/parametres"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
+				<li><a href="/users/admin/userglist"><span class="glyphicon glyphicon-log-out" ></span>Utilisateurs</a></li>
+				<li><a href="/users/identite"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
 				<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out" ></span> Se déconnecter</a></li>
 			</ul>
 		@endif
@@ -70,7 +69,7 @@
 				</a>
 			<ul class="dropdown-menu" >
 				<li><a href="/users/customer/commandes"><span class="glyphicon glyphicon-th-list" ></span> Mes commandes</a></li>
-				<li><a href="/users/customer/parametres"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
+				<li><a href="/users/identite"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
 				<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out" ></span> Se déconnecter</a></li>
 			</ul>
 		@endif

@@ -14,6 +14,7 @@
 	<!-- Custom CSS -->
 	<!--Latest compiled and minified CSS from PureCSS-->
 	<link rel="stylesheet" href="{{ url('css/pure-min.css') }}">
+	<link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}">
 	@yield('styles')
 
 	<script src="{{ url('js/jquery.min.js') }}"></script>
@@ -33,7 +34,8 @@ body {
 }
 .bg-grey
 {
-	background-color: #666699;
+	background-color: #b3b3b3;
+	text-shadow: 0.4px 0.4px;
 }
 .container-fluid {
     margin-right: auto;
@@ -84,8 +86,11 @@ body {
 	color:#0f0b0c;
 }
 footer{
-	margin-bottom: auto;
-	margin-top:auto;
+	
+    padding-top: 8%; 
+    margin-bottom: 0;
+    bottom: 0;
+    width: 100%;
 }
 /*effects*/
 #empowered-logo:hover,#talk:hover,#search:hover, #world-map:hover {
@@ -110,14 +115,14 @@ footer{
 }
 /*Modal credits*/
  .modal-header {
-      background-color: #666699;
+      background-color: #b3b3b3;
       color:0f0b0c !important;
       text-align: center;
 	  font-family: Font-1;
       font-size: 30px;
   }
   .modal-footer {
-      background-color: #666699;
+      background-color: #b3b3b3;;
   }
   .modal-body{
 	 font-family: Font-1; 
@@ -180,7 +185,8 @@ footer{
 		</div>
 	</div>
 </nav>
-@yiel(content)
+
+@yield('content')
 
 @include('users.headerfooter.partials.footer')
 </body>

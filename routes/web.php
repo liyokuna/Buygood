@@ -20,13 +20,13 @@ Route::get('/', function () {
     return redirect('/home');
 });
 Route::group([
-'namespace'=>'user',
+'namespace'=>'users',
 'middleware'=>'auth'
 ],
 function() {
 Route::get('/buygood', function () {
     return view('users.welcome.index');
-	
 });
+Route::resource('users/identite', 'identiteController');
 
 });
