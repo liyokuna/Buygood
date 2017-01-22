@@ -28,7 +28,8 @@
 			  <div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingOne">
 				  <h4 class="panel-title">
-					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" 
+aria-controls="collapseOne">
 					  Identités
 					</a>
 				  </h4>
@@ -41,14 +42,14 @@
 						<dt>Lastname</dt>
 						<dd>{{$credentials->lastname}}</dd>
 					</dl>
-					<a href="/users/identite/credentials" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-edit"> Modifier</a>
 				  </div>
 				</div>
 			  </div>
 			  <div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingTwo">
 				  <h4 class="panel-title">
-					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" 
+aria-expanded="false" aria-controls="collapseTwo">
 					  Adresse
 					</a>
 				  </h4>
@@ -65,14 +66,14 @@
 						<dt>Ville</dt>
 						<dd>{{$credentials->city}}</dd>
 					</dl>
-					<a href="/users/identite/adresse" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-edit"> Modifier</a>
 				  </div>
 				</div>
 			  </div>
 			  <div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				  <h4 class="panel-title">
-					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" 
+aria-expanded="false" aria-controls="collapseThree">
 					 Login
 					</a>
 				  </h4>
@@ -83,25 +84,47 @@
 						<dt>Email</dt>
 						<dd>{{$credentials->email}}</dd>
 					</dl>
-					<a href="/users/identite/{{$credentials->id}}/edit" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-edit"> Modifier</a>
+					<a href="/users/mdp/{{$credentials->id}}/edit" class="btn btn-warning" role="button"><span 
+class="glyphicon glyphicon-edit"> Modifier mot de passe</a>
 				  </div>
 				</div>
 			  </div>
+			  <div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+				  <h4 class="panel-title">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThere" 
+aria-expanded="false" aria-controls="collapseTwo">
+					  Moyen de Paiment
+					</a>
+				  </h4>
+				</div>
+				<div id="collapseThere" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				  <div class="panel-body">
+					<dl>
+						<dt>Paypal</dt>
+						<dd><a href="/users/payment/#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-edit"> Modifier</a></dd>
+					</dl>
+				  </div>
+				</div>
+			  </div>
+			  
 			</div>
 	</div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6">
-			<i class="fa fa-undo"></i><a class="btn btn-info btn-link" href="/buygood" role="button"> Go back</a>
+		<div class="col-lg-4 form-group">
+			<a class="btn btn-info btn-link" href="/buygood" role="button"><span class="glyphicon glyphicon-menu-left"> Go back</a>
 		</div>
 		
-		<div class="col-lg-6">
-		<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete">
-				<i class="fa fa-times-circle"></i>
-				Supprimer Le Compte
-		</button>
+		<div class="col-lg-4 form-group">
+			<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modal-delete"><span class="glyphicon glyphicon-remove"> Supprimer le compte
+			</button>
+		</div>
+		
+		<div class="col-lg-4 form-group">
+			<a href="/users/identite/{{$credentials->id}}/edit" class="btn btn-warning" role="button" style=""><span class="glyphicon glyphicon-edit"> Modifier</a>
 		</div>
 	</div>
 </div>

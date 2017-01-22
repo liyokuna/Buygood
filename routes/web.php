@@ -27,6 +27,8 @@ function() {
 Route::get('/buygood', function () {
     return view('users.welcome.index');
 });
-Route::resource('users/identite', 'identiteController');
+Route::resource('users/identite', 'identiteController',['expect'=>['index', 'edit', 'update']]);
+Route::resource('users/mdp', 'MdpController',['expect'=>['edit', 'update']]);
+Route::resource('users/userlist', 'ListUsersController',['expect'=>['index', 'edit', 'update','show']]);
 
 });

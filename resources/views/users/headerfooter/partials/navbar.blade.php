@@ -53,7 +53,7 @@
 				</a>
 			<ul class="dropdown-menu" >
 				<li><a href="/users/admin/linkedin"><span class="glyphicon glyphicon-plus" ></span> Ajouter/ Retirer un produit</a></li>
-				<li><a href="/users/admin/userglist"><span class="glyphicon glyphicon-log-out" ></span>Utilisateurs</a></li>
+				<li><a href="/users/userlist"><span class="glyphicon glyphicon-log-out" ></span>Utilisateurs</a></li>
 				<li><a href="/users/identite"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
 				<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out" ></span> Se déconnecter</a></li>
 			</ul>

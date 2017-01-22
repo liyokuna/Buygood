@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row page-title-row">
       <div class="col-md-12">
-        <h3>Login <small>» Modifier Vos Login Et/Ou Mot De Passe Ici</small></h3>
+        <h3>Identités <small>» Modifier Vos données personnels  Ici</small></h3>
       </div>
     </div>
 </div>
@@ -15,7 +15,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">Login et Mot De Passe</h3>
+            <h3 class="panel-title">Vos données personnels</h3>
           </div>
           <div class="panel-body">
 
@@ -29,7 +29,7 @@
               @include('users.user._form')
 
               <div class="form-group">
-                <div class="col-md-7 col-md-offset-3">
+                <div class="col-md-8 col-md-offset-3">
                   <button type="submit" class="btn btn-primary btn-md">
                     <i class="fa fa-save"></i>
                       Save Changes

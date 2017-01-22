@@ -3,10 +3,12 @@ namespace App\Http\Controllers\users;
 
 use Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UsersRequest;
 use Carbon\Carbon;
 use App\User;
 use APP\authorization;
-use App\Http\Requests\UsersUpdateRequest;
+use Illuminate\Http\Request;
+
 
 class identiteController extends Controller
 {
@@ -14,7 +16,10 @@ class identiteController extends Controller
 	'name'=>'',
 	'lastname'=>'',
 	'email'=>'',
-	'type'=>'',
+	'street'=>'',
+	'extrainfo'=>'',
+	'city'=>'',
+	'postalcode'=>'',
 	];
 	
 	public function index(){
@@ -36,9 +41,7 @@ class identiteController extends Controller
 	return view('users.user.edit', $data);
 	}
 	
-	
-	
-	public function update(UsersUpdateRequest $request,$id)
+	public function update(UsersRequest $request,$id)
 	{
 		$infos = User::where('id',$id)->firstOrFail();
 		foreach (array_keys($this->infos) as $field) {
@@ -46,8 +49,8 @@ class identiteController extends Controller
 		}	
 		$infos->save();
 			
-		return redirect("/profile/admin/users")
-        ->withSuccess("Changes saved !");
+		return redirect("users/identite")
+        ->withSuccess("Les modifications ont été enregistrées !");
 	}
 	
 }
