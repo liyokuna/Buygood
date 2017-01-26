@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row page-title-row">
       <div class="col-md-12">
-        <h3>Login <small>» Modifier votre compte ici</small></h3>
+        <h3>Administrateur <small>» Modifier l'arcticle</small></h3>
       </div>
     </div>
 </div>
@@ -15,18 +15,18 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">Votre Compte</h3>
+            <h3 class="panel-title">L'article {{$nom}} </h3>
           </div>
           <div class="panel-body">
 
 
             <form class="form-horizontal" method="POST"
-                  action="/users/identite/{{$id}}">
+                  action="/users/produits/{{$id}}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <input type="hidden" name="_method" value="PUT">
               <input type="hidden" name="id" value="{{ $id }}">
 
-              @include('users.user._form')
+              @include('users.admin._form')
 
               <div class="form-group">
                 <div class="col-md-7 col-md-offset-3">
@@ -35,7 +35,7 @@
                       Save Changes
                   </button>
 				
-				<i class="fa fa-undo" style="margin-left:7px;"></i><a href="/users/identite" >
+				<i class="fa fa-undo" style="margin-left:7px;"></i><a href="/users/produits" >
 					 Go Back
 				</a>
 				

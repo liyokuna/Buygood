@@ -6,15 +6,19 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\User;
 use APP\authorization;
-use App\Http\Requests\UsersUpdateRequest;
+use App\Http\Requests\UsersRequest;
+use Illuminate\Http\Request;
 
 class identiteController extends Controller
 {
 	protected $infos = [
 	'name'=>'',
 	'lastname'=>'',
-	'email'=>'',
-	'type'=>'',
+	'email' => '',
+	'street'=>'',
+	'extrainfo'=>'',
+	'city'=>'',
+	'postalcode'=>''
 	];
 	
 	public function index(){
@@ -25,29 +29,41 @@ class identiteController extends Controller
 	
 	public function edit($id)
 	{
-
-		$infos = User::where('id',$id)->firstOrFail();
-		$data = ['id' => $id];
+	if($id==Auth::user()->id){
 		
-	foreach (array_keys($this->infos) as $field) {
-			$data[$field] = old($field, $infos->$field);
-    }	
+			$infos = User::where('id',$id)->firstOrFail();
+			$data = ['id' => $id];
+			
+		foreach (array_keys($this->infos) as $field) {
+				$data[$field] = old($field, $infos->$field);
+		}	
 
-	return view('users.user.edit', $data);
+		return view('users.user.edit', $data);
+	}
+	else{
+		return redirect("users/identite")
+        ->withErrors("Something went Wrong");
+	}
 	}
 	
 	
 	
-	public function update(UsersUpdateRequest $request,$id)
+	public function update(UsersRequest $request,$id)
 	{
-		$infos = User::where('id',$id)->firstOrFail();
-		foreach (array_keys($this->infos) as $field) {
-			$infos->$field= htmlentities($request->__get($field));
-		}	
-		$infos->save();
-			
-		return redirect("/profile/admin/users")
-        ->withSuccess("Changes saved !");
+		if($id==Auth::user()->id){
+			$infos = User::where('id',$id)->firstOrFail();
+			foreach (array_keys($this->infos) as $field) {
+				$infos->$field= htmlentities($request->__get($field));
+			}	
+			$infos->save();
+				
+			return redirect("users/identite")
+			->withSuccess("Changes saved !");
+		}
+		else{
+			return redirect("users/identite")
+        ->withErrors("Something went Wrong !");
+		}
 	}
 	
 }
