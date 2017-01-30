@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row page-title-row">
       <div class="col-md-12">
-        <h3>Administrateur <small>» Modifier la photo ici</small></h3>
+        <h3>Administrateur <small>» Modifier le chemin de la photo ici</small></h3>
       </div>
     </div>
 </div>
@@ -25,17 +25,6 @@
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <input type="hidden" name="_method" value="PUT">
               <input type="hidden" name="id" value="{{ $id }}">
-
-				<div class="form-group">
-					<label for="id_post" class="col-md-3 control-label">Article</label>
-					<div class="col-md-8">
-						<select class="form-control" id="id_post" name="id_post">
-						@foreach( $items as $item )
-							<option value="{{ $item->id }}">{{ $item->nom }}</option>
-						@endforeach
-						</select>
-					</div>
-				</div>
 			  
               @include('users.admin.photo._formcustom')
 
@@ -46,7 +35,7 @@
                       Save Changes
                   </button>
 				
-				<i class="fa fa-undo" style="margin-left:7px;"></i><a href="/users/photos/{{$data->id_items}}" >
+				<i class="fa fa-undo" style="margin-left:7px;"></i><a href="/users/produits" >
 					 Go Back
 				</a>
 				

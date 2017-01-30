@@ -9,6 +9,7 @@ use App\Items;
 use App\ItemsPhotos;
 use App\User;
 use App\Http\Requests\PhotosRequest;
+use App\Http\Requests\PhotoRequest;
 
 
 class PhotosController extends Controller
@@ -16,6 +17,9 @@ class PhotosController extends Controller
 		protected $infos = [
 		    'chemin'=>'',
 			'id_items'=>'',
+		];
+		protected $infosupdate = [
+		    'chemin'=>'',
 		];
     /**
      * Display a listing of the resource.
@@ -96,13 +100,12 @@ class PhotosController extends Controller
     public function edit($id)
     {
         if(Auth::user()->type=="admin"){
-			$infos = ItemsPhotos::where('id',$id)->firstOrFail();
+			$infos = ItemsPhotos::select('id_items','chemin')->where('id',$id)->firstOrFail();
 			$data = ['id' => $id];
 			foreach (array_keys($this->infos) as $field) {
 				$data[$field] = old($field, $infos->$field);
 			}	
-		$items = Items::where('id',$id)->firstOrFail();
-		return view('users.admin.photo.edit', compact('data','items'));
+		return view('users.admin.photo.editcustom', $data);
 		}
 		else{
 			return redirect("users/produits")
@@ -117,9 +120,24 @@ class PhotosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PhotosRequest $request, $id)
+    public function update(PhotoRequest $request, $id)
     {
-        //
+		if(Auth::user()->type=="admin"){
+			$infosupdate = ItemsPhotos::where('id',$id)->firstOrFail();
+			$index=$infosupdate->id_items;
+			$id_photo = Items::select('id')->where('id',$index)->firstOrFail();
+			foreach (array_keys($this->infosupdate) as $field) {
+				$infosupdate->$field= htmlentities($request->__get($field));
+			}	
+			$infosupdate->save();
+				
+			return redirect("users/photos/$id_photo->id'")
+			->withSuccess("Les modifications ont été enregistrées !");
+			}
+		else{
+			return redirect("users/produits")
+			->withErrors("Quelque chose n'a pas marchée.");
+		}
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\users;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\User;

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Items;
 use App\User;
+use App\ItemsPhotos;
 use App\Http\Requests\ItemsRequest;
 
 
@@ -84,21 +85,17 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        if(Auth::user()->type=="admin"){
-			$infos = Items::where('id',$id)->firstOrFail();
-			$data = ['id' => $id];
-			foreach (array_keys($this->infos) as $field) {
-				$data[$field] = old($field, $infos->$field);
-			}	
-		return view('users.admin.show', $data);
-		}
-		else{
 		$infos = Items::where('id',$id)->firstOrFail();
+		$photos = ItemsPhotos::where('id_items',$id)->get();
 		$data = ['id' => $id];
 		foreach (array_keys($this->infos) as $field) {
 			$data[$field] = old($field, $infos->$field);
-			}	
-		return view('users.customer.show', $data);
+		}	
+        if(Auth::user()->type=="admin"){
+		return view('users.admin.show', compact('data','photos'));
+		}
+		else{	
+		return view('users.customer.show', compact('data','photos'));
 		}
     }
 
