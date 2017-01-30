@@ -14,7 +14,8 @@ class ItemsPhotos extends Migration
     public function up()
     {
        Schema::create('items_photos', function (Blueprint $table) {
-            $table->integer('id_items');
+            $table->increments('id');
+			$table->integer('id_items');
             $table->string('chemin');
             $table->timestamps();
         });

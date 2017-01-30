@@ -42,6 +42,7 @@
 		<table class="table table-condensed table-responsive table-hover">
 			<thead>
 			<tr>
+				<th>#</th>
 				<th>Nom</th>
 				<th>Description</th>
 				<th>Stock</th>
@@ -55,18 +56,25 @@
 		<tbody>
 		@foreach($products as $product)
 			<tr>
+				<td>{{ $product->id }}</td>
 				<td>{{ $product->nom }}</td>
 				<td>{{ $product->description }}</td>
-				<td>{{ $product->stock }}</td>
+				<td>@if($product->stock <=5)
+				<span class="label label-danger">{{ $product->stock }}</span>
+				@else
+					<span class="label label-info">{{ $product->stock }}</span>
+				@endif
+				</td>
 				<td>{{ $product->prix }}</td>
 				<td>{{ $product->photo }}</td>
 				<td>{{ $product->created_at }}</td>
 				<td>{{ $product->updated_at }}</td>
 				<td>
 				
-					<a href="/users/produits/{{$product->id}}" class="btn btn-info btn-md" role="button">Voir</a>
-					<a href="/users/produits/{{$product->id}}/edit" class="btn btn-warning btn-md" role="button">Editer</a>
-					<button type="button" class="btn btn-danger btn-md text-right" data-toggle="modal" data-target="#modal-delete"><span class="glyphicon glyphicon-remove"> Supprimer</button>
+					<a href="/users/produits/{{$product->id}}" class="btn btn-info btn-xs " role="button">Voir</a>
+					<a href="/users/produits/{{$product->id}}/edit" class="btn btn-warning btn-xs " role="button">Editer</a>
+					<a href="/users/photos/{{$product->id}}" type="button" class="btn btn-info btn-xs  " ><span class="glyphicon glyphicon-plus"> Photos</a>
+					<button type="button" class="btn btn-danger btn-xs  " data-toggle="modal" data-target="#modal-delete"><span class="glyphicon glyphicon-remove"> Supprimer</button>
 				</td>
 			</tr>
 		@endforeach

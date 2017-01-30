@@ -24,7 +24,8 @@ class PhotosRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id_items'=>'required',
+			'chemin'=>'required',
         ];
     }
 }

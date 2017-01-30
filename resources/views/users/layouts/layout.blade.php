@@ -92,22 +92,9 @@ footer{
     bottom: 0;
     width: 100%;
 }
-/*effects*/
-#empowered-logo:hover,#talk:hover,#search:hover, #world-map:hover {
+p,h1,h2,h3,h4{
 	font-family: Font-1;
-	src: url(fonts/sansation_bold.woff);
-	font-weight: bold;
-}
-#you:hover, #internship:hover, #trip:hover, #about:hover{
-	font-family: Font-1;
-	src: url(fonts/sansation_light.woff);
-}
-
-#empowered-logo, #talk, #search, #world-map {
-	/*-webkit-transition: width 2s, height 2s; /* Safari */
-    transition: width 2s, height 2s;
-	-webkit-transition-timing-function: ease;*/
-	font-family: Font-1;
+   src: url(/fonts/sansation_light.woff);
 }
 @font-face {
    font-family: Font-1;

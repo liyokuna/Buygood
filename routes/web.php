@@ -31,4 +31,5 @@ Route::resource('users/identite', 'identiteController',['expect'=>['update','ind
 Route::resource('users/userslist', 'ListUsersController',['expect'=>['update', 'edit']]);
 Route::resource('users/mdp', 'MdpController',['expect'=>['update','edit']]);
 Route::resource('users/produits', 'ItemsController');
+Route::resource('users/photos', 'PhotosController');
 });
