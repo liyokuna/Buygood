@@ -1,11 +1,9 @@
-@extends('users.layouts.layout')
+@extends('layouts.layout')
 @section('content')
-<br>
-<br>
-  <div class="container">
+<div class="container">
     <div class="row page-title-row">
       <div class="col-md-12">
-        <h3>Login <small>Â» Modifier le type de compte ici</small></h3>
+        <h3>Contact <small>» Nous avons hâte de vous répondre au plus vite</small></h3>
       </div>
     </div>
 </div>
@@ -15,33 +13,24 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title"> Compte de {{ $name }} {{$lastname}} </h3>
+            <h3 class="panel-title"> Veuillez renseigner les informations ci-dessous </h3>
           </div>
           <div class="panel-body">
-
-
             <form class="form-horizontal" method="POST"
-                  action="/users/userslist/{{$id}}">
+                  action="/email">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <input type="hidden" name="_method" value="PUT">
-              <input type="hidden" name="id" value="{{ $id }}">
 
-              @include('users.user._form')
+              @include('emails._form')
 
               <div class="form-group">
-                <div class="col-md-7 col-md-offset-3">
+                <div class="col-md-7">
                   <button type="submit" class="btn btn-primary btn-md">
                     <i class="fa fa-save"></i>
-                      Save Changes
-                  </button>
-				
-				<i class="fa fa-undo" style="margin-left:7px;"></i><a href="/users/userslist" >
-					 Go Back
-				</a>
-				
+                      Envoyer
+                  </button>				
                 </div>
               </div>
-
             </form>
 
           </div>
@@ -49,7 +38,5 @@
       </div>
     </div>
   </div>
-</div>
-
- <br>
-@stop
+<br>
+@endsection

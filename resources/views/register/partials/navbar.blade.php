@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
 		<li><a href="/home">Home</a></li>
 		<li><a href="/abroad">Our Ideas</a></li>
-		<li><a data-toggle="modal" data-target="#Modal-contact" href="#">Contact</a></li>
+		<li><a href="/emails">Contact</a></li>
     </ul>
 	
     <ul class="nav navbar-nav navbar-right">

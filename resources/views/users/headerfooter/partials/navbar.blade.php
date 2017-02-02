@@ -21,7 +21,7 @@
 			@if (Auth::check() && Auth::user()->type=="users")
 			<li><a href="/users/produits"><span class="glyphicon glyphicon-th-list" ></span> Nos articles</a></li>
 			@endif
-			<li><a data-toggle="modal" data-target="#Modal-contact" href="#"><span class="glyphicon glyphicon-envolepo"></span> Contact</a></li>
+			<li><a href="/emails"><span class="glyphicon glyphicon-envolepo"></span> Contact</a></li>
     </ul>
 	
    <ul class="nav navbar-nav navbar-right">

@@ -19,6 +19,11 @@ Route::get('/home', function () {
 Route::get('/', function () {
     return redirect('/home');
 });
+
+Route::post('/emails', 'ContactControlller@sendEmail');
+Route::get('/emails', function () {
+    return view('emails.request');
+});
 Route::group([
 'namespace'=>'users',
 'middleware'=>'auth'
