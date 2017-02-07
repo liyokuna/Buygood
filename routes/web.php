@@ -20,10 +20,11 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::post('/emails', 'ContactControlller@sendEmail');
+Route::post('/emails', 'ContactControl_ler@sendEmail');
 Route::get('/emails', function () {
     return view('emails.request');
 });
+
 Route::group([
 'namespace'=>'users',
 'middleware'=>'auth'
@@ -37,4 +38,8 @@ Route::resource('users/userslist', 'ListUsersController',['expect'=>['update', '
 Route::resource('users/mdp', 'MdpController',['expect'=>['update','edit']]);
 Route::resource('users/produits', 'ItemsController');
 Route::resource('users/photos', 'PhotosController');
+Route::post('/emails', 'ContactController@sendEmail');
+Route::get('/emails', function () {
+    return view('emails.request');
+});
 });

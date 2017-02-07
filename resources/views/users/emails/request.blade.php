@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-<br><br>
 <div class="container">
     <div class="row page-title-row">
       <div class="col-md-12">

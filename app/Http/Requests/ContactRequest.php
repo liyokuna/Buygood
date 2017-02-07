@@ -27,7 +27,7 @@ class ContactRequest extends FormRequest
 			'nom'='required|min:2',
 			'email'='required|email',
 			'sujet'='required',
-			'corps'='required',
+			'corps'='required'
         ];
     }
 }

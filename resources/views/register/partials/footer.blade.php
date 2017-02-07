@@ -5,9 +5,9 @@
 		<div class="row">
                 <div class="pure-menu pure-menu-horizontal text-right">
                     <ul>
-                        <li class="pure-menu-item"><a href="https://fr.linkedin.com/in/lmukunaciowela" class="pure-menu-link">Linkedin</a></li>
-                        <li class="pure-menu-item"><a href="https://github.com/liyokuna" class="pure-menu-link">GitHub</a></li>
-						<li class="pure-menu-item"><a href="http://lmukunaciowela.pe.hu/www/english.php#contact" class="pure-menu-link">Contact</a></li>
+                        <li class="pure-menu-item"><a href="https://facebook.com" class="pure-menu-link">Facebook</a></li>
+                        <li class="pure-menu-item"><a href="https://twitter.com" class="pure-menu-link">Twitter</a></li>
+						<li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
 						<li class="pure-menu-item"><a href="#" data-toggle="modal" data-target="#myModal" class="pure-menu-link">Credits</a></li>
                     </ul>
                 </div>
@@ -71,4 +71,5 @@
 		  </div>
 		
 	</div>
+</div>
 </div>
