@@ -100,7 +100,7 @@ class PhotosController extends Controller
     public function edit($id)
     {
         if(Auth::user()->type=="admin"){
-			$infos = ItemsPhotos::select('id_items','chemin')->where('id',$id)->firstOrFail();
+			$infos = Items_Photos::select('id_items','chemin')->where('id',$id)->firstOrFail();
 			$data = ['id' => $id];
 			foreach (array_keys($this->infos) as $field) {
 				$data[$field] = old($field, $infos->$field);
@@ -123,7 +123,7 @@ class PhotosController extends Controller
     public function update(PhotoRequest $request, $id)
     {
 		if(Auth::user()->type=="admin"){
-			$infosupdate = ItemsPhotos::where('id',$id)->firstOrFail();
+			$infosupdate = Items_Photos::where('id',$id)->firstOrFail();
 			$index=$infosupdate->id_items;
 			$id_photo = Items::select('id')->where('id',$index)->firstOrFail();
 			foreach (array_keys($this->infosupdate) as $field) {
@@ -157,7 +157,7 @@ class PhotosController extends Controller
 			$infos->delete();
 		
 		return redirect("users/produits")
-        ->withSuccess("The '$infos->nom' has been deleted.");
+        ->withSuccess("Suppression d'une photo avec succès !");
 		}
     }
 }

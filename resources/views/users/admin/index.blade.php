@@ -77,6 +77,36 @@
 					<button type="button" class="btn btn-danger btn-xs  " data-toggle="modal" data-target="#modal-delete"><span class="glyphicon glyphicon-remove"> Supprimer</button>
 				</td>
 			</tr>
+			{{-- Confirm Delete --}}
+			<div class="modal fade" id="modal-delete" tabIndex="-1">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">
+					×
+				  </button>
+				  <h4 class="modal-title">Veuillez Confirmer</h4>
+				</div>
+				<div class="modal-body">
+				  <p class="lead">
+					<i class="fa fa-question-circle fa-lg"></i>  
+					Est-vous sûr de vouloir supprimer cet article ?
+				  </p>
+				</div>
+				<div class="modal-footer">
+				  <form method="POST" action="/users/produits/{{ $product->id }}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<input type="hidden" name="_method" value="DELETE">
+					<button type="button" class="btn btn-default"
+							data-dismiss="modal">Fermer</button>
+					<button type="submit" class="btn btn-danger">
+					  <i class="fa fa-times-circle"></i> Oui
+					</button>
+				  </form>
+				</div>
+			  </div>
+			</div>
+			</div>
 		@endforeach
 		</tbody>
 		</table>
@@ -96,36 +126,7 @@
 	</div>
 </div>
 
-{{-- Confirm Delete --}}
-  <div class="modal fade" id="modal-delete" tabIndex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            ×
-          </button>
-          <h4 class="modal-title">Veuillez Confirmer</h4>
-        </div>
-        <div class="modal-body">
-          <p class="lead">
-            <i class="fa fa-question-circle fa-lg"></i>  
-            Est-vous sûr de vouloir supprimer cet article ?
-          </p>
-        </div>
-        <div class="modal-footer">
-          <form method="POST" action="/users/produits/{{ $product->id }}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="button" class="btn btn-default"
-                    data-dismiss="modal">Fermer</button>
-            <button type="submit" class="btn btn-danger">
-              <i class="fa fa-times-circle"></i> Oui
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 <br>
 @stop

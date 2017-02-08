@@ -29,7 +29,7 @@
 						<div class="caption-full">
 						<a href="/users/photos/{{$photo->id}}/edit" class="btn btn-md btn-info" role="button" >Modifier</a>
 						
-						<form method="POST" action="/users/photos/{{ $photo->chemin }}" style="padding-top:2px;">
+						<form method="POST" action="/users/photos/{{ $photo->id }}" style="padding-top:2px;">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="_method" value="DELETE">	
 							<button type="submit" class="btn btn-md btn-danger">

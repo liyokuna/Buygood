@@ -156,15 +156,15 @@ class ItemsController extends Controller
     public function destroy($id)
     {
 		if(Auth::user()->type!="admin"){
-			return redirect("users/identite")
+			return redirect("users/produits")
 			->withErrors("Quelque chose n'a pas marchée.");
 		}
 		else{
 			$infos = Items::where('id',$id)->firstOrFail();	
 			$infos->delete();
 		
-		return redirect("users/identite")
-        ->withSuccess("The '$infos->nom' has been deleted.");
+		return redirect("users/produits")
+        ->withSuccess("Suppression avec succès !");
 		}
     }
 }
