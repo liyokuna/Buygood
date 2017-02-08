@@ -38,6 +38,8 @@ Route::resource('users/userslist', 'ListUsersController',['expect'=>['update', '
 Route::resource('users/mdp', 'MdpController',['expect'=>['update','edit']]);
 Route::resource('users/produits', 'ItemsController');
 Route::resource('users/photos', 'PhotosController');
+Route::resource('users/commandes','CommandesController');
+Route::resource('users/archive', 'CommandesoldController');
 Route::post('/emails', 'ContactController@sendEmail');
 Route::get('/emails', function () {
     return view('emails.request');

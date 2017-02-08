@@ -39,10 +39,6 @@ class PhotosController extends Controller
     public function create()
     {
 		if(Auth::user()->type=="admin"){
-		/*$infos = [];
-		foreach ($this->infos as $field => $default) {
-			$infos[$field] = old($field, $default);
-		}*/
 		$items=Items::select('id','nom')->get();
 		return view('users.admin.photo.create',compact('items'));
 		}else{

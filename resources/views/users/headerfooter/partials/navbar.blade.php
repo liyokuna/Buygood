@@ -11,9 +11,8 @@
 					<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu" >
-				<li><a href="/users/admin/pendinglist"><span class="glyphicon glyphicon-warning-sign"></span>Commande en Attente</a></li>
-				<li><a href="/users/admin/sendlist"><span class="glyphicon glyphicon-send" ></span>Commande expédiée</a></li>
-				<li><a href="/users/admin/factures"><span class="glyphicon glyphicon-list" ></span>Factures</a></li>
+				<li><a href="/users/commandes"><span class="glyphicon glyphicon-warning-sign"></span>Commandes</a></li>
+				<li><a href="/users/archive"><span class="glyphicon glyphicon-send" ></span>Commandes Archivées</a></li>
 			</ul>
 			</li>
 			@endif

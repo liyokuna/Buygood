@@ -35,11 +35,6 @@ body {
 .bg-grey
 {
 	background-color: #b3b3b3;
-	text-shadow: 0.4px 0.4px;
-}
-.container-fluid {
-    margin-right: auto;
-    margin-left: auto;
 }
 .navbar {
     font-size: 13.5px;
@@ -85,11 +80,10 @@ body {
 .pure-menu-link, .copyright{
 	color:#0f0b0c;
 }
-footer{
-	
-    padding-top: 8%; 
+footer{ 
+	position:fixed;
     margin-bottom: 0;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
 }
 p,h1,h2,h3,h4{
