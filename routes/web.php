@@ -33,13 +33,14 @@ function() {
 Route::get('/buygood', function () {
     return view('users.welcome.index');
 });
-Route::resource('users/identite', 'identiteController',['expect'=>['update','index', 'destroy','edit']]);
+Route::resource('users/identite', 'identiteController',['expect'=>['update','index', 'destroy','edit','show']]);
 Route::resource('users/userslist', 'ListUsersController',['expect'=>['update', 'edit']]);
 Route::resource('users/mdp', 'MdpController',['expect'=>['update','edit']]);
-Route::resource('users/produits', 'ItemsController');
-Route::resource('users/photos', 'PhotosController');
-Route::resource('users/commandes','CommandesController');
-Route::resource('users/archive', 'CommandesoldController');
+Route::resource('users/produits', 'ItemsController',['expect'=>['update','index', 'destroy','edit','show','store']]);
+Route::resource('users/photos', 'PhotosController',['expect'=>['update','index', 'destroy','edit','show','store']]);
+Route::resource('users/commandes','CommandesController',['expect'=>['index', 'edit','show','store']]);
+Route::resource('users/archive', 'CommandesoldController',['expect'=>['index']]);
+Route::resource('shop', 'CartController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::post('/emails', 'ContactController@sendEmail');
 Route::get('/emails', function () {
     return view('emails.request');
