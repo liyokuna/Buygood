@@ -26,7 +26,7 @@
               <input type="hidden" name="_method" value="PUT">
               <input type="hidden" name="id" value="{{ $id }}">
 
-              @include('users.user._form')
+              @include('users.users._form')
 
               <div class="form-group">
                 <div class="col-md-7 col-md-offset-3">

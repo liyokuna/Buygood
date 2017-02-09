@@ -44,7 +44,7 @@ class ListUsersController extends Controller
 		}
 		else{
 			redirect('users/identite')
-			->withErrors("Les modifications ont été enregistrées !");
+			->withErrors("Il y a eu un problème !");
 		}
 	}
 	

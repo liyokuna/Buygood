@@ -49,7 +49,7 @@
 					<span class="caret"></span>
 				</a>
 			<ul class="dropdown-menu" >
-				<li><a href="/users/customer/commandes"><span class="glyphicon glyphicon-th-list" ></span> Mes commandes</a></li>
+				<li><a href="/users/commandes"><span class="glyphicon glyphicon-th-list" ></span> Mes commandes</a></li>
 				<li><a href="/users/identite"><span class="glyphicon glyphicon-cog" ></span> Paramètres</a></li>
 				<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out" ></span> Se déconnecter</a></li>
 			</ul>

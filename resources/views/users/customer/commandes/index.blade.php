@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row page-title-row">
 		<div class="col-md-6">
-			<h3>Administrateur <small>» Liste des commandes sur BuyGood</small></h3>
+			<h3>Client <small>» Liste des vos commandes sur BuyGood</small></h3>
 		</div>
     </div>
 </div>
@@ -43,8 +43,6 @@
 			<thead>
 			<tr>
 				<th>#</th>
-				<th>ID_Commande</th>
-				<th>Client</th>
 				<th>Etat</th>
 				<th>Prix Total</th>
 				<th>Date de création</th>
@@ -55,21 +53,18 @@
 		<tbody>
 		@foreach($commandes as $commande)
 			<tr>
-				<td>{{ $commande->id }}</td>
 				<td>{{$commande->id_commande}} </td>
-				<td>{{ $commande->id_user }}</td>
 				<td>@if($commande->etat)
 				<span class="label label-danger">Expediée</span>
 				@else
 					<span class="label label-warning">Validation En Attente</span>
 				@endif
 				</td>
-				<td>{{ $commande->prix }} Euros</td>
+				<td>{{ $commande->prix }} Euro</td>
 				<td>{{ $commande->created_at }}</td>
 				<td>{{ $commande->updated_at }}</td>
 				<td>
 					<a href="/users/commandes/{{$commande->id}}" class="btn btn-info btn-xs " role="button">Voir</a>
-					<a href="/users/commandes/{{$commande->id}}/edit" class="btn btn-warning btn-xs " role="button">Editer</a>
 				</td>
 			</tr>
 		@endforeach
@@ -77,5 +72,6 @@
 		</table>
 	</div>
 	</div>
+
 <br>
 @stop

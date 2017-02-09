@@ -31,12 +31,14 @@ class CommandesController extends Controller
      */
     public function index()
     {
-        $commandes = Commandes::where('etat','FALSE')->simplePaginate(15);
+        
         if(Auth::user()->type=="admin"){
+			$commandes = Commandes::where('etat','FALSE')->simplePaginate(15);
 			return view('users.commandes.index', compact('commandes'));
 		}
 		else{
-			redirect('users/produits')->withErrors("Il y a eu un problème !");
+			$commandes = Commandes::where('id_user',Auth::user()->id)->simplePaginate(15);
+			return view ('users.customer.commandes.index', compact('commandes'));
 		}
     }
 
