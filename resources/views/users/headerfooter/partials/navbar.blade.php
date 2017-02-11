@@ -19,8 +19,9 @@
 			
 			@if (Auth::check() && Auth::user()->type=="users")
 			<li><a href="/users/produits"><span class="glyphicon glyphicon-th-list" ></span> Nos articles</a></li>
+			<li><a href="mailto:liyokuna@hotmail.com?Subject=Get%20In%20Touch%20With%20You"><span class="glyphicon glyphicon-envolepo"></span> Contact Us</a></li>
 			@endif
-			<li><a href="/emails"><span class="glyphicon glyphicon-envolepo"></span> Contact</a></li>
+			
     </ul>
 	
    <ul class="nav navbar-nav navbar-right">

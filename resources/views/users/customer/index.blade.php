@@ -38,12 +38,13 @@
 </div>
 
 <div class="container">
+
 	<div class="row">
 	@foreach($products as $product)
-		<div class="col-md-3">
+		<div class="col-lg-3 col-md-4 col-xs-6 ">
 			<div class="thumbnail">
 			<a href="/users/produits/{{$product->id}}">
-				<img class="img-responsive img-thumbnail img-rounded" src="/photos/{{$product->photo}}"  alt="{{$product->nom}}" style="width:100%, height:50%">
+				<img class="img-responsive img-thumbnail img-rounded" src="/photos/{{$product->photo}}"  alt="{{$product->nom}}" width="400" height="300">
 				<div class="caption">
 					<p>{{$product->nom}} à {{$product->prix}} Euros</p>
 				</div>
@@ -52,7 +53,7 @@
 		</div>
 	@endforeach
 		</div>
-	</div>
+</div>
 
 <div class="container">
 	<div class="row">

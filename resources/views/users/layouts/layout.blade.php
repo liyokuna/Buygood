@@ -34,7 +34,7 @@ body {
 }
 .bg-grey
 {
-	background-color: #b3b3b3;
+	background-color: #222;
 }
 .navbar {
     font-size: 13.5px;
@@ -78,10 +78,10 @@ body {
     font-style: normal;
 }
 .pure-menu-link, .copyright{
-	color:#0f0b0c;
+	color:grey;
 }
 footer{ 
-	position:fixed;
+	
     margin-bottom: 0;
     bottom: 0px;
     width: 100%;

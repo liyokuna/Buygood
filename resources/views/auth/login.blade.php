@@ -2,11 +2,11 @@
 
 @section('content')
 <div id="image_bg">
-	<img src="{{URL::asset('/pictures/clipboard-2-full.jpg')}}" alt="clipboard" class="img-responsive" style="width:100%; height:899px";>
+	<img src="{{URL::asset('/pictures/cash-register.jpg')}}" alt="clipboard" class="img-responsive" style="width:100%; height:899px";>
 <div class="center">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 col-offset-md-2">
+			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading text">Connexion</div>
 					<div class="panel-body">

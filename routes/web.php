@@ -20,11 +20,6 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::post('/emails', 'ContactControl_ler@sendEmail');
-Route::get('/emails', function () {
-    return view('emails.request');
-});
-
 Route::group([
 'namespace'=>'users',
 'middleware'=>'auth'
@@ -40,9 +35,4 @@ Route::resource('users/produits', 'ItemsController',['expect'=>['update','index'
 Route::resource('users/photos', 'PhotosController',['expect'=>['update','index', 'destroy','edit','show','store']]);
 Route::resource('users/commandes','CommandesController',['expect'=>['index', 'edit','show','store']]);
 Route::resource('users/archive', 'CommandesoldController',['expect'=>['index']]);
-Route::resource('shop', 'CartController', ['only' => ['index', 'store', 'update', 'destroy']]);
-Route::post('/emails', 'ContactController@sendEmail');
-Route::get('/emails', function () {
-    return view('emails.request');
-});
 });

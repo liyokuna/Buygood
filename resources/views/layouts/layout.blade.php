@@ -33,7 +33,7 @@ body {
 }
 .bg-grey
 {
-	background-color: #666699;
+	background-color: #222;
 }
 .container-fluid {
     margin-right: auto;
@@ -81,7 +81,7 @@ body {
     font-style: normal;
 }
 .pure-menu-link, .copyright{
-	color:#0f0b0c;
+	color:grey;
 }
 footer{
 	margin-bottom: auto;
