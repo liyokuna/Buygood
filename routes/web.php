@@ -35,4 +35,7 @@ Route::resource('users/produits', 'ItemsController',['expect'=>['update','index'
 Route::resource('users/photos', 'PhotosController',['expect'=>['update','index', 'destroy','edit','show','store']]);
 Route::resource('users/commandes','CommandesController',['expect'=>['index', 'edit','show','store']]);
 Route::resource('users/archive', 'CommandesoldController',['expect'=>['index']]);
+Route::get('/ajouter/{id}','CookieController@setCookie');
+Route::get('/panier','CookieController@getCookie');
+Route::get('/panier/{id}','CookieController@removeCookie');
 });

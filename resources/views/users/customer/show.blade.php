@@ -17,11 +17,11 @@
 						  <!-- Wrapper for slides -->
 						  <div class="carousel-inner" role="listbox">
 							<div class="item active">
-							  <img style='margin: 0 auto;' class="img-responsiveenter-block" src="/photos/{{$data['photo']}}" alt="{{$data['nom']}}" width="460" height="345">
+							  <img style='margin: 0 auto;' class="img-responsive enter-block" src="/photos/{{$data['photo']}}" alt="{{$data['nom']}}" width="460" height="345">
 							</div>
 							@foreach($photos as $photo)
 							<div class="item">
-							  <img src="/photos/{{$photo['chemin']}}" alt="{{$photo['chemin']}}" width="460" height="345" >
+							  <img style='margin: 0 auto;' src="/photos/{{$photo['chemin']}}" class="img-responsive enter-block" alt="{{$photo['chemin']}}" width="460" height="345" >
 							</div>
 							@endforeach
 						  </div>
@@ -37,7 +37,7 @@
 						  </a>
 						</div>
                     <div class="caption-full">
-                        <h4 class="pull-right">{{$data['prix']}} Euro</h4>
+                        <h4 class="pull-right">{{$data['prix']}} &#8364</h4>
                         <h4><a >{{$data['nom']}}</a>
                         </h4>
 						<h4> <a>Nombre en Stock 
@@ -52,7 +52,7 @@
                         <p>{{$data['description']}}</p>
 						<br>
 						<div class="text-right">
-							<a class="btn btn-success" href="#">Ajouter au Panier</a>
+							<a class="btn btn-success" href="/ajouter/{{$data['id']}}">Ajouter au Panier</a>
 						</div>
                     </div>
 					<br>
@@ -73,9 +73,6 @@
             </div>
 			
 			<div>
-			
-			
-			
 			</div>
 
         </div>

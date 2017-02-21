@@ -46,7 +46,7 @@
 			<a href="/users/produits/{{$product->id}}">
 				<img class="img-responsive img-thumbnail img-rounded" src="/photos/{{$product->photo}}"  alt="{{$product->nom}}" width="400" height="300">
 				<div class="caption">
-					<p>{{$product->nom}} à {{$product->prix}} Euros</p>
+					<p>{{$product->nom}} à {{$product->prix}} &#8364</p>
 				</div>
 			</a>
 			</div>

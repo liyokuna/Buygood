@@ -25,7 +25,7 @@
     </ul>
 	
    <ul class="nav navbar-nav navbar-right">
-	
+	   <li><a href="/panier"><img alt="brand" src="{{URL::asset('/pictures/1Citycons_bag.png')}}" style="width:24px;height:24px;margin-top:-5px;"> Panier</a></li>
 		<!-- if a normal user login -->
 		
 		<li class="dropdown">
@@ -56,5 +56,4 @@
 			</ul>
 		@endif
 		</li>
-		<li><a href="/users/panier"><img alt="brand" src="{{URL::asset('/pictures/1Citycons_bag.png')}}" style="width:24px;height:24px;margin-top:-5px;"> Panier</a></li>
     </ul>
