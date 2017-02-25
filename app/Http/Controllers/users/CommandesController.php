@@ -4,6 +4,8 @@ namespace App\Http\Controllers\users;
 
 use Auth;
 use App\User;
+use App\Panier;
+use App\Items;
 use App\Commandes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -78,8 +80,18 @@ class CommandesController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('id',$id)->select('name','lastname');
-		
+        $panier=Panier::select('item_id','quantity')->where('id_panier',$id)->get();
+
+        for($i=0;$i<sizeof($panier);$i++){
+            $names[]=Items::select('id','nom','prix')->where('id',$panier[$i]->item_id)->first();
+        }
+        sort($names);
+        $paniers=[];
+        for($i=0;$i<sizeof($panier);$i++){
+            if($names[$i]->id==$panier[$i]->item_id)
+                $paniers[]=array($names[$i],$panier[$i]);
+        }
+        return view('users.customer.commandes.show',compact('paniers'));
     }
 
     /**

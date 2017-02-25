@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Commandes extends Migration
+class Panier extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class Commandes extends Migration
      */
     public function up()
     {
-        Schema::create('commandes', function (Blueprint $table) {
+        Schema::create('paniers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_commande');
-			$table->integer('id_user');
-            $table->boolean('etat');
-			$table->float('prix', 5, 2);
+            $table->string('id_panier');
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

@@ -64,7 +64,7 @@
 				<td>{{ $commande->created_at }}</td>
 				<td>{{ $commande->updated_at }}</td>
 				<td>
-					<a href="/users/commandes/{{$commande->id}}" class="btn btn-info btn-xs " role="button">Voir</a>
+					<a href="/users/commandes/{{$commande->id_commande}}" class="btn btn-info btn-xs " role="button">Voir</a>
 				</td>
 			</tr>
 		@endforeach

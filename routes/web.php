@@ -38,4 +38,5 @@ Route::resource('users/archive', 'CommandesoldController',['expect'=>['index']])
 Route::get('/ajouter/{id}','CookieController@setCookie');
 Route::get('/panier','CookieController@getCookie');
 Route::get('/panier/{id}','CookieController@removeCookie');
+Route::post('valider','CookieController@validerPanier');
 });
